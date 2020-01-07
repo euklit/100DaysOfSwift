@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:gert.xcodeproj">
+      location = "self:MilestoneProject1.xcodeproj">
    </FileRef>
 </Workspace>
