@@ -1,4 +1,4 @@
-# 100 Days of SwiftUI
+# 100 Days of Swift
 In this repo my implementation for the milestone projects of the [100 Days of Swift challenge](https://www.hackingwithswift.com/100) can be found. These projects are completely built on my own though some projects include bits which were built in the tutorials Paul Hudson provides. 
 If you have any suggestions or questions feel free to [tweet me](https://twitter.com/niiklaas).
 
