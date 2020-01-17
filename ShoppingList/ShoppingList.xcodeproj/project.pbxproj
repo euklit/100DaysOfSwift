@@ -13,10 +13,11 @@
 		D7E9928223D1D79A00EB941E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E9928023D1D79A00EB941E /* Main.storyboard */; };
 		D7E9928423D1D79B00EB941E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E9928323D1D79B00EB941E /* Assets.xcassets */; };
 		D7E9928723D1D79B00EB941E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E9928523D1D79B00EB941E /* LaunchScreen.storyboard */; };
+		D7E9928F23D25EA400EB941E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E9928E23D25EA400EB941E /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D7E9927723D1D79A00EB941E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E9927723D1D79A00EB941E /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E9927A23D1D79A00EB941E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E9927C23D1D79A00EB941E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7E9927E23D1D79A00EB941E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		D7E9928323D1D79B00EB941E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7E9928623D1D79B00EB941E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7E9928823D1D79B00EB941E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7E9928E23D25EA400EB941E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 		D7E9927823D1D79A00EB941E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7E9927723D1D79A00EB941E /* ShoppingList.app */,
+				D7E9927723D1D79A00EB941E /* Shopping List.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +61,7 @@
 				D7E9927A23D1D79A00EB941E /* AppDelegate.swift */,
 				D7E9927C23D1D79A00EB941E /* SceneDelegate.swift */,
 				D7E9927E23D1D79A00EB941E /* ViewController.swift */,
+				D7E9928E23D25EA400EB941E /* Item.swift */,
 				D7E9928023D1D79A00EB941E /* Main.storyboard */,
 				D7E9928323D1D79B00EB941E /* Assets.xcassets */,
 				D7E9928523D1D79B00EB941E /* LaunchScreen.storyboard */,
@@ -84,7 +87,7 @@
 			);
 			name = ShoppingList;
 			productName = ShoppingList;
-			productReference = D7E9927723D1D79A00EB941E /* ShoppingList.app */;
+			productReference = D7E9927723D1D79A00EB941E /* Shopping List.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E9928F23D25EA400EB941E /* Item.swift in Sources */,
 				D7E9927F23D1D79A00EB941E /* ViewController.swift in Sources */,
 				D7E9927B23D1D79A00EB941E /* AppDelegate.swift in Sources */,
 				D7E9927D23D1D79A00EB941E /* SceneDelegate.swift in Sources */,
@@ -292,7 +296,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = leeCompany.ShoppingList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Shopping List";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = leeCompany.ShoppingList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Shopping List";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

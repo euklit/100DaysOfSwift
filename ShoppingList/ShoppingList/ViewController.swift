@@ -8,43 +8,39 @@
 
 import UIKit
 
-struct Item: Codable {
-    let name: String
-    var checked = false
-}
-
 class ViewController: UITableViewController {
-    var shoppingList: [String] = []
-    let filename = FileManager().getDocumentsDirectory().appendingPathComponent("shoppingList")
+    let shoppingList = List()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         title = "Shopping List"
         
         // load list
-        if let items = try? String(contentsOf: filename) {
-            shoppingList = items.components(separatedBy: ",")
-        }
+        shoppingList.loadItems()
         
         
         // bar buttons
+        let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(clearList))
+        deleteButton.tintColor = .red
+        
+        navigationItem.leftBarButtonItem = deleteButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(clearList))
+        
+        
     }
     
     @objc func addItem() {
-        let ac = UIAlertController(title: "Add an item to your list", message: nil, preferredStyle: .alert)
+        let ac = UIAlertController(title: "Add item to your list", message: nil, preferredStyle: .alert)
         ac.addTextField()
+        ac.textFields?[0].placeholder = "Milk, coffee, fruit loops..."
         
         let submitAction = UIAlertAction(title: "Add", style: .default) { _ in
-            if let newItem = ac.textFields?[0].text {
-                if newItem.isEmpty { return }
-                self.shoppingList.insert(newItem, at: 0)
+            if let text = ac.textFields?[0].text {
+                if text.isEmpty { return }
+                self.shoppingList.addItem(with: text)
                 let indexPath = IndexPath(row: 0, section: 0)
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
-                self.saveList()
             }
         }
         
@@ -56,46 +52,42 @@ class ViewController: UITableViewController {
     }
     
     @objc func clearList() {
-        shoppingList = []
-        saveList()
+        shoppingList.clear()
         tableView.reloadData()
     }
     
-    func saveList() {
-        let joinedList = shoppingList.joined(separator: ",")
-        do {
-            try joinedList.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-        } catch {
-            print("save unsuccesful")
-        }
-    }
     
     // MARK: tableView functions
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingList.count
+        return shoppingList.items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "item", for: indexPath)
-        cell.textLabel?.text = shoppingList[indexPath.row]
+        
+        let item = shoppingList.items[indexPath.row]
+        cell.textLabel?.text = item.description
+        
+        if item.checked {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let cell = tableView.cellForRow(at: indexPath)
-        if cell?.accessoryType == UITableViewCell.AccessoryType.none {
-            cell?.accessoryType = .checkmark
-        } else {
-            cell?.accessoryType = .none
-        }
+        shoppingList.toggle(indexPath: indexPath)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            shoppingList.remove(at: indexPath.row)
+            shoppingList.removeItem(indexPath: indexPath)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
