@@ -16,7 +16,7 @@ Start screen            |  detail view |  share view
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/euklit/100DaysOfSwift/blob/master/MilestoneProject1/Screenshots/mainscreen.png)  |  ![](https://github.com/euklit/100DaysOfSwift/blob/master/MilestoneProject1/Screenshots/detailview.png) | ![](https://github.com/euklit/100DaysOfSwift/blob/master/MilestoneProject1/Screenshots/activityview.png)
 
-* [Milestone Project 2: Shopping List](https://github.com/euklit/100DaysOfSwift/tree/master/MilestoneProject1)
+* [Milestone Project 2: Shopping List](https://github.com/euklit/100DaysOfSwift/tree/master/ShoppingList)
 
 
 Start screen            |  add shopping item |  
