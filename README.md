@@ -25,7 +25,7 @@ Start screen            |  add shopping item |
 ![](https://github.com/euklit/100DaysOfSwift/blob/master/ShoppingList/Screenshots/list.png)  |  ![](https://github.com/euklit/100DaysOfSwift/blob/master/ShoppingList/Screenshots/addItem.png) 
 
 
-* [Milestone Project 3: Hangman List](https://github.com/euklit/100DaysOfSwift/tree/master/Hangman)
+* [Milestone Project 3: Hangman](https://github.com/euklit/100DaysOfSwift/tree/master/Hangman)
 
 Start screen            |  play |  game over
 :-------------------------:|:-------------------------:|:-------------------------:
